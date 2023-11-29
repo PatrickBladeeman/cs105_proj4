@@ -1,11 +1,12 @@
 #include "Account.h"
 
-Account::Account(double initialBalance, double interestRate)
-    : balance(initialBalance),
-      numDeposits(0),
-      numWithdrawals(0),
-      annualInterestRate(interestRate),
-      monthlyServiceCharges(0) {}
+Account::Account(double initialBalance, double interestRate) {
+    balance = initialBalance;
+    numDeposits = 0;
+    numWithdrawals = 0;
+    annualInterestRate = interestRate;
+    monthlyServiceCharges = 0;
+}
 
 void Account::deposit(double amount) {
     balance += amount;

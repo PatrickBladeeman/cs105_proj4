@@ -1,5 +1,5 @@
 class Account {
-protected:
+private:
     double balance;
     int numDeposits;
     int numWithdrawals;
