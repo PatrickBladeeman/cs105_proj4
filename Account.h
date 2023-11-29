@@ -1,6 +1,3 @@
-#ifndef ACCOUNT_H
-#define ACCOUNT_H
-
 class Account {
 protected:
     double balance;
@@ -23,5 +20,3 @@ public:
     double getAnnualInterestRate() const;
     double getMonthlyServiceCharges() const;
 };
-
-#endif // ACCOUNT_H
