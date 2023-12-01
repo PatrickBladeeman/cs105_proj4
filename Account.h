@@ -1,3 +1,6 @@
+
+#ifndef ACCOUNT_H
+#define ACCOUNT_H
 class Account {
 private:
     double balance;
@@ -22,3 +25,5 @@ public:
     double getMonthlyServiceCharges() const {return monthlyServiceCharges;};
     void setMonthlyServiceCharges(double amount) {monthlyServiceCharges = amount;};
 };
+
+#endif // ACCOUNT_H
