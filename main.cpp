@@ -32,6 +32,12 @@ int main() {
     //     }
     // }
     Account* curAccount = initAcc(&inputFile);
+    if (curAccount == nullptr) {
+        cerr << "Incorrect Account Type" << endl;
+        return -1;
+    }
+
+    double curTransaction;
     cout << "initBalance: " << curAccount->getBalance() << endl;
     cout << "initInterest: " << curAccount->getAnnualInterestRate() << endl;
 
@@ -48,9 +54,13 @@ Account* initAcc(ifstream* inputFile) {
     //cout << accountType << initBalance << initInterest;
     if (accountType == 'C') {
         currentAccount = new Checking(initBalance, initInterest);
-    } else {
+    } else if (accountType == 'S') {
         currentAccount = new Savings(initBalance, initInterest);
-    }
+    } 
    
     return currentAccount;
+}
+
+void processTransactions(ifstream* inputFile) {
+    
 }
