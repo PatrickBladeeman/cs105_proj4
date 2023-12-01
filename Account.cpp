@@ -30,25 +30,7 @@ void Account::monthlyProc() {
     numDeposits = 0;
     numWithdrawals = 0;
     monthlyServiceCharges = 0;
+    int num = 29;
 }
 
-double Account::getBalance() const {
-    return balance;
-}
-
-int Account::getNumDeposits() const {
-    return numDeposits;
-}
-
-int Account::getNumWithdrawals() const {
-    return numWithdrawals;
-}
-
-double Account::getAnnualInterestRate() const {
-    return annualInterestRate;
-}
-
-double Account::getMonthlyServiceCharges() const {
-    return monthlyServiceCharges;
-}
 

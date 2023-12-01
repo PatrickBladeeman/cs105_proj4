@@ -14,9 +14,11 @@ public:
     virtual void calcInt();
     virtual void monthlyProc();
 
-    double getBalance() const;
-    int getNumDeposits() const;
-    int getNumWithdrawals() const;
-    double getAnnualInterestRate() const;
-    double getMonthlyServiceCharges() const;
+    double getBalance() const {return balance;};
+    void setBalance(double amount) {balance = amount;};
+    int getNumDeposits() const {return numDeposits;};
+    int getNumWithdrawals() const {return numWithdrawals;};
+    double getAnnualInterestRate() const {return annualInterestRate;};
+    double getMonthlyServiceCharges() const {return monthlyServiceCharges;};
+    void setMonthlyServiceCharges(double amount) {monthlyServiceCharges = amount;};
 };

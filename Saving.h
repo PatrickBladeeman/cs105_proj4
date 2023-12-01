@@ -10,6 +10,7 @@ public:
     void withdraw(double amount) override;
     void deposit(double amount) override;
     void monthlyProc() override;
+    void serviceCharge(double amount);
 };
 
 
