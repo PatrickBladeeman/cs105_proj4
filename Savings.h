@@ -1,11 +1,11 @@
 #include "Account.h"
 
-class Saving : public Account {
+class Savings : public Account {
 private:
     bool status; // active or inactive
 
 public:
-    Saving(double initialBalance, double interestRate);
+    Savings(double initialBalance, double interestRate);
 
     void withdraw(double amount) override;
     void deposit(double amount) override;
