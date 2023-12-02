@@ -17,7 +17,7 @@ public:
     virtual void deposit(double amount);
     virtual void withdraw(double amount);
     virtual void calcInt();
-    virtual void monthlyProc();
+    virtual double monthlyProc();
 
     double getBalance() const {return balance;};
     void setBalance(double amount) {balance = amount;};
