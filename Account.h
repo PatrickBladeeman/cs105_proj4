@@ -8,6 +8,8 @@ private:
     int numWithdrawals;
     double annualInterestRate;
     double monthlyServiceCharges;
+    double depositAmt;
+    double withdrawalAmt;
 
 public:
     Account(double initialBalance, double interestRate);
@@ -24,6 +26,8 @@ public:
     double getAnnualInterestRate() const {return annualInterestRate;};
     double getMonthlyServiceCharges() const {return monthlyServiceCharges;};
     void setMonthlyServiceCharges(double amount) {monthlyServiceCharges = amount;};
+    double getDeposits() const {return depositAmt;};
+    double getWithdrawals(){return withdrawalAmt;};
 };
 
 #endif // ACCOUNT_H

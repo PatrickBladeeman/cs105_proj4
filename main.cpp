@@ -1,14 +1,15 @@
 #include <fstream>
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include <cmath>
 #include "Account.h"
 #include "Savings.h"
 #include "Checking.h"
 using namespace std;
 
-Account* initAcc(ifstream* inputFile);
 
+Account* initAcc(ifstream* inputFile);
 
 int main() {
     cout << "HELLOW HAI" << endl;
@@ -38,10 +39,30 @@ int main() {
     }
 
     double curTransaction;
-    cout << "initBalance: " << curAccount->getBalance() << endl;
-    cout << "initInterest: " << curAccount->getAnnualInterestRate() << endl;
-
-    
+    double initialBalance = curAccount->getBalance();
+    // cout << "initBalance: " << curAccount->getBalance() << endl;
+    // cout << "initInterest: " << curAccount->getAnnualInterestRate() << endl;
+    string line = "";
+    while(getline(inputFile, line)){
+        int amount = stod(line);
+        if(amount > 0){
+            curAccount->deposit(amount);
+            cout << "deposit: $" << amount << endl;
+        } else if (amount < 0) {
+            curAccount->withdraw(amount);
+            cout << "withdraw: -$" << abs(amount) << endl;
+        }
+    }
+//     beginning balance, total dollar amount
+// of deposits, total dollar amount of withdrawals, interest dollar amount, service
+// charges dollar amount, and ending balance.
+    cout << "Beginning Balance: " << initialBalance << endl;
+    cout << "Total deposits: " << curAccount->getDeposits() << endl;
+    cout << "Total withdrawals: " << curAccount->getWithdrawals() << endl;
+    cout << "Interest dollar amount: " << curAccount->getAnnualInterestRate() << endl;
+    cout << "Total service charges: " << curAccount->getWithdrawals() << endl;
+    cout << "Ending balance: " << curAccount->getWithdrawals() << endl;
+    curAccount->monthlyProc();
     return 0;
 }
 
@@ -64,3 +85,4 @@ Account* initAcc(ifstream* inputFile) {
 void processTransactions(ifstream* inputFile) {
     
 }
+

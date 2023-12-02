@@ -10,11 +10,13 @@ Account::Account(double initialBalance, double interestRate) {
 
 void Account::deposit(double amount) {
     balance += amount;
+    depositAmt++;
     numDeposits++;
 }
 
 void Account::withdraw(double amount) {
     balance -= amount;
+    withdrawalAmt++;
     numWithdrawals++;
 }
 
@@ -30,6 +32,8 @@ void Account::monthlyProc() {
     numDeposits = 0;
     numWithdrawals = 0;
     monthlyServiceCharges = 0;
+    depositAmt = 0;
+    withdrawalAmt = 0;
     int num = 29;
 }
 
